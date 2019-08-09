@@ -1,0 +1,9 @@
+# Ignore the readback files in this directory
+
+flashdiff.txt
+readback_flash.bin
+vflash_gain_builder.bin
+vflash_image_downloader.bin
+vflash_root_certificate_downloader.bin
+vflash_tls_cert_flash_tool.bin
+
