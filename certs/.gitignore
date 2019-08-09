@@ -1,0 +1,14 @@
+# Ignore the certificates in this directory
+
+*
+
+# Except the following
+!CA/
+!CA/*
+!.gitignore
+!README.md
+
+
+# OS generated files
+.DS_Store
+.DS_Store?
