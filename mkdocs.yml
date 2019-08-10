@@ -1,0 +1,178 @@
+# Copyright (c) 2019 makerdiary
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+# Project information
+site_name: Pitaya Go Developer Docs
+site_description: The documentation offers all you need to start developing with Pitaya Go.
+site_author: makerdiary
+site_url: https://wiki.makerdiary.com/pitaya-go/
+
+# Repository
+repo_name: makerdiary/pitaya-go
+repo_url: https://github.com/makerdiary/pitaya-go
+edit_uri: ""
+
+# Copyright
+copyright: 'Copyright &copy; 2019 <a href="https://makerdiary.com">makerdiary.com</a>'
+
+# Configuration
+theme:
+  name: null
+  custom_dir: material
+
+  # 404 page
+  static_templates:
+    - 404.html
+
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+  feature:
+    tabs: true
+  palette:
+    primary: marsala
+    accent: marsala
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/images/favicon.png
+  logo: assets/images/logo.svg
+
+# Customization
+extra:
+  social:
+    - type: comments
+      link: https://community.makerdiary.com
+    - type: globe
+      link: https://makerdiary.com
+    - type: github-alt
+      link: https://github.com/makerdiary
+    - type: twitter
+      link: https://twitter.com/makerdiary
+    - type: facebook
+      link: https://www.facebook.com/makerdiary
+#  disqus: 'makerdiary'
+#  discourse: 'community.makerdiary.com'
+
+# Extensions
+markdown_extensions:
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra_javascript:
+  - 'openthread/assets/js/jquery.qrcode.min.js'
+
+# Page tree
+nav:
+  - Introduction: index.md
+  - Getting Started: getting-started.md
+  - Programming: programming.md
+  - nRF5 SDK Tutorials:
+    - Overview: nrf5-sdk/index.md
+    - Setup the nRF5 SDK: nrf5-sdk/setup-the-nrf5-sdk.md
+    - Build & Run a first example: nrf5-sdk/build-n-run-a-first-example.md
+    - Peripheral Examples:
+      - Blinky Example: nrf5-sdk/peripheral/blinky-example.md
+      - Button Example: nrf5-sdk/peripheral/button-example.md
+      - Battery Status Example: nrf5-sdk/peripheral/battery-example.md
+      - NFC Tag Example: nrf5-sdk/peripheral/nfc-example.md
+      - Power Profiler Example: nrf5-sdk/peripheral/power-profiler-example.md
+      - QSPI Flash Example: nrf5-sdk/peripheral/qspi-example.md
+      - RSSI Viewer Example: nrf5-sdk/peripheral/rssi-viewer-example.md
+      - Temperature Example: nrf5-sdk/peripheral/temperature-example.md
+    - BLE Examples:
+      - BLE Blinky Example: nrf5-sdk/ble/ble-blinky-example.md
+      - BLE Beacon Example: nrf5-sdk/ble/ble-beacon-example.md
+      - BLE Battery Service Example: nrf5-sdk/ble/ble-bas-example.md
+      - BLE Heart Rate Sensor Example: nrf5-sdk/ble/ble-hrs-example.md
+      - BLE HID Keyboard Example: nrf5-sdk/ble/ble-hids-keyboard-example.md
+      - BLE HID Mouse Example: nrf5-sdk/ble/ble-hids-mouse-example.md
+  - Wi-Fi Tutorials:
+    - Overview: wifi/index.md
+    - Basic Examples:
+      - Chip Info Example: wifi/basic/chip-info-example.md
+      - MAC Address Example: wifi/basic/mac-address-example.md
+      - Signal Strength Example: wifi/basic/signal-strength-example.md
+      - STA Mode Example: wifi/basic/mode-sta-example.md
+      - AP Mode Example: wifi/basic/mode-ap-example.md
+      - AP Scan Example: wifi/basic/ap-scan-example.md
+      - Power Save Mode Example: wifi/basic/power-mode-example.md
+      - HTTP Provision Example: wifi/basic/provision-http-example.md
+    - Protocol Examples:
+      - Ping Request Example: wifi/protocol/ping-example.md
+      - TCP Client Example: wifi/protocol/tcp-client-example.md
+      - TCP Server Example: wifi/protocol/tcp-server-example.md
+      - UDP Client Example: wifi/protocol/udp-client-example.md
+      - UDP Server Example: wifi/protocol/udp-server-example.md
+      - NTP Time Client Example: wifi/protocol/time-client-example.md
+    - Advanced Examples:
+      - MQTT Client Example: wifi/advanced/mqtt-client-example.md
+      - SSL Connection Example: wifi/advanced/ssl-connect-example.md
+      - Weather Client Example: wifi/advanced/weather-client-example.md
+    - Update Wi-Fi Firmware: 
+      - Prepare for Setup: wifi/update/index.md
+      - Download Wi-Fi Firmware: wifi/update/download-firmware.md
+      - Download Root Certificates: wifi/update/download-root-certs.md
+      - Download TLS Certificates: wifi/update/download-tls-certs.md
+      - Customize Provisioning Page: wifi/update/customize-provisioning-page.md
+      - Modify TX Power Gain: wifi/update/modify-gain-values.md
+    - Create Custom TLS Certificates: wifi/create-tls-certificates.md
+  - OpenThread Tutorials:
+    - Overview: openthread/index.md
+    - Getting Started: openthread/getting-started.md
+    - Setup the Thread SDK: openthread/setup-the-thread-sdk.md
+    - Build & Run a Thread Example: openthread/build-n-run-thread-example.md
+    - OpenThread Border Router: openthread/openthread-border-router.md
+    - Thread Topology Monitor: openthread/thread-topology-monitor.md
+    - Thread Network Sniffer: openthread/thread-network-sniffer.md
+  - Where to Buy: where-to-buy.md
+  - Contributing: CONTRIBUTING.md
+  - License: LICENSE.md
+
+# Google Analytics
+google_analytics:
+  - 'UA-54344624-2'
+  - 'auto'
