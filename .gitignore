@@ -1,0 +1,12 @@
+.DS_Store/*
+
+#vscode editor
+.vscode
+
+# Output directories
+_build/
+build/
+
+# mkdocs
+material/*
+site
