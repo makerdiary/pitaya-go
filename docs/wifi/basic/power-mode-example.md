@@ -11,10 +11,10 @@ This example also implements the Command Line Interface over BLE NUS and USB CDC
 
 ## Hardware Prerequisites
 
-* Pitaya Go board
-* Digital Multimeter
-* DC Power Supply
-* A 2-pin JST cable
+* 1x Pitaya Go board
+* 1x Digital Multimeter
+* 1x DC Power Supply
+* 1x 2-pin JST cable
 
 ## Building the example
 
