@@ -10,9 +10,9 @@ The pre-installed demo running on the Pitaya Go board is controlled with Command
 
 Your Pitaya Go box includes:
 
-* A Pitaya Go board
-* An NFC-A PCB Antenna with MHF I connector
-* A USB-C Cable
+* 1x Pitaya Go board
+* 1x NFC-A PCB Antenna with MHF I connector
+* 1x USB-C Cable
 
 ![](assets/images/pitaya-go-product-parts-w.png)
 
