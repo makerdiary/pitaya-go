@@ -18,10 +18,11 @@ In the following section, you'll build an OpenThread Border Router with Raspberr
 
 ## Hardware Requirements
 
-* Raspberry Pi 3B
-* Pitaya Go
-* 4 GB (or larger) microSD card and microSD card reader
-* microUSB power supply for Raspberry Pi 3B
+* 1x Raspberry Pi 3B
+* 1x Pitaya Go
+* 1x 4 GB (or larger) microSD card
+* 1x microSD card reader
+* 1x microUSB power supply for Raspberry Pi 3B
 
 ![](assets/images/otbr-hw-parts.jpg)
 
