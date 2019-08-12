@@ -30,7 +30,7 @@ repo_url: https://github.com/makerdiary/pitaya-go
 edit_uri: ""
 
 # Copyright
-copyright: 'Copyright &copy; 2019 <a href="https://makerdiary.com">makerdiary.com</a>'
+copyright: 'Copyright &copy; 2019 <a href="https://wiki.makerdiary.com" target="_blank">wiki.makerdiary.com</a>'
 
 # Configuration
 theme:
