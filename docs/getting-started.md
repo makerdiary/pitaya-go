@@ -4,7 +4,7 @@
 
 This section describes how to run the Out of Box Demo without going through the complete toolchain installation.
 
-The pre-installed demo running on the Pitaya Go board is controlled with Command Line Interface (CLI) over USB CDC ACM or Web Bluetooth. You can set the LED color, get the chip temperature or control the NFC Tag, using the built-in commands. The application also allows you to connect Pitaya Go to a Wi-Fi network and ping a host in the public network.
+The pre-installed demo running on the Pitaya Go board is controlled with Command Line Interface (CLI) over USB CDC ACM or Bluetooth Low Energy. You can set the LED color, get the chip temperature or control the NFC Tag, using the built-in commands. The application also allows you to connect Pitaya Go to a Wi-Fi network and ping a host in the public network.
 
 ## Included in the Box
 
@@ -37,7 +37,7 @@ Terminal applications (for example [PuTTY](https://www.chiark.greenend.org.uk/~s
 	```
 
 	!!!Note
-		If you are using Windows 7 or earlier, you must load an additional USB CDC driver. The driver can be found in `pitaya-go/external/usb_driver`.
+		If you are using Windows 7 or earlier, you must load an additional USB CDC driver. The driver can be found in [pitaya-go/external/usb_driver](https://github.com/makerdiary/pitaya-go/tree/master/external/usb_driver).
 
 2. Press <kbd>Enter</kbd> on the keyboard to bring up the `usb_cli:~$` prompt.
 
