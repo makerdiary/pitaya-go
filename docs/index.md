@@ -24,7 +24,7 @@ Pitaya Go features a Battery Charger with power path management, 64Mbit ultra lo
 
 	- Shipped with the latest firmware 19.6.1
 	- IEEE 802.11 b/g/n 20 MHz (1x1) Solution
-	- Extreme low power
+	- Extreme low power with Shutdown Control
 	- On-Chip Network Stack to Offload MCU
 	- Supports Soft-AP
 	- Security protocols supported: WPA/WPA2 Personal, TLS/SSL
