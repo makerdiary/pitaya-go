@@ -7,7 +7,8 @@ The Wi-Fi module(ATWINC1500B) features an on-chip microcontroller and integrated
 This section details the download procedure of firmware, TLS/SSL root certificates, and TX power gain values into WINC serial Flash.
 
 !!! Note
-	Before updating the firmware, use [Chip Info Example](../basic/chip-info-example.md) to check your current version. The latest Firmware Version is **19.6.1**. If it's up to date, there is no need to download the firmware.
+	* Before updating the firmware, use [Chip Info Example](../basic/chip-info-example.md) to check your current version. The latest Firmware Version is **19.6.1**. If it's up to date, there is no need to download the firmware.
+	* The download procedure only works on **Windows** computer.
 
 ## How it works
 
@@ -17,10 +18,10 @@ The following illustration shows how contents are downloaded into WINC serial Fl
 
 ## Prerequisites
 
-* Pitaya Go board
+* 1x Pitaya Go board
 * A Windows 10 machine
 * [nRF Connect for Desktop](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop)
-* USB-C Cable
+* 1x USB-C Cable
 
 ## Clone the repository
 
