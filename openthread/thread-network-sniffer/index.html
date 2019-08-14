@@ -1,0 +1,1936 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="The documentation offers all you need to start developing with Pitaya Go.">
+      
+      
+        <link rel="canonical" href="https://wiki.makerdiary.com/pitaya-go/openthread/thread-network-sniffer/">
+      
+      
+        <meta name="author" content="makerdiary">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.1">
+    
+    
+      
+        <title>Thread Network Sniffer - Pitaya Go Developer Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.3b80946a.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-54344624-2", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="marsala" data-md-color-accent="marsala">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#build-a-thread-network-sniffer" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://wiki.makerdiary.com/pitaya-go/" title="Pitaya Go Developer Docs" class="md-header-nav__button md-logo">
+          
+            <img src="../../assets/images/logo.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Pitaya Go Developer Docs
+            </span>
+            <span class="md-header-nav__topic">
+              Thread Network Sniffer
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/makerdiary/pitaya-go" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    makerdiary/pitaya-go
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Introduction" class="md-tabs__link">
+        Introduction
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../nrf5-sdk/" title="nRF5 SDK Tutorials" class="md-tabs__link">
+          nRF5 SDK Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../wifi/" title="Wi-Fi Tutorials" class="md-tabs__link">
+          Wi-Fi Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../" title="OpenThread Tutorials" class="md-tabs__link md-tabs__link--active">
+          OpenThread Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://wiki.makerdiary.com/pitaya-go/" title="Pitaya Go Developer Docs" class="md-nav__button md-logo">
+      
+        <img src="../../assets/images/logo.svg" width="48" height="48">
+      
+    </a>
+    Pitaya Go Developer Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/makerdiary/pitaya-go" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    makerdiary/pitaya-go
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../programming/" title="Programming" class="md-nav__link">
+      Programming
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      nRF5 SDK Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        nRF5 SDK Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/setup-the-nrf5-sdk/" title="Setup the nRF5 SDK" class="md-nav__link">
+      Setup the nRF5 SDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/build-n-run-a-first-example/" title="Build & Run a first example" class="md-nav__link">
+      Build & Run a first example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+    
+    <label class="md-nav__link" for="nav-4-4">
+      Peripheral Examples
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-4">
+        Peripheral Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/peripheral/blinky-example/" title="Blinky Example" class="md-nav__link">
+      Blinky Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/peripheral/button-example/" title="Button Example" class="md-nav__link">
+      Button Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/peripheral/battery-example/" title="Battery Status Example" class="md-nav__link">
+      Battery Status Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/peripheral/nfc-example/" title="NFC Tag Example" class="md-nav__link">
+      NFC Tag Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/peripheral/power-profiler-example/" title="Power Profiler Example" class="md-nav__link">
+      Power Profiler Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/peripheral/qspi-example/" title="QSPI Flash Example" class="md-nav__link">
+      QSPI Flash Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/peripheral/rssi-viewer-example/" title="RSSI Viewer Example" class="md-nav__link">
+      RSSI Viewer Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/peripheral/temperature-example/" title="Temperature Example" class="md-nav__link">
+      Temperature Example
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
+    
+    <label class="md-nav__link" for="nav-4-5">
+      BLE Examples
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-5">
+        BLE Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/ble/ble-blinky-example/" title="BLE Blinky Example" class="md-nav__link">
+      BLE Blinky Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/ble/ble-beacon-example/" title="BLE Beacon Example" class="md-nav__link">
+      BLE Beacon Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/ble/ble-bas-example/" title="BLE Battery Service Example" class="md-nav__link">
+      BLE Battery Service Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/ble/ble-hrs-example/" title="BLE Heart Rate Sensor Example" class="md-nav__link">
+      BLE Heart Rate Sensor Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/ble/ble-hids-keyboard-example/" title="BLE HID Keyboard Example" class="md-nav__link">
+      BLE HID Keyboard Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/ble/ble-hids-mouse-example/" title="BLE HID Mouse Example" class="md-nav__link">
+      BLE HID Mouse Example
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Wi-Fi Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Wi-Fi Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
+    
+    <label class="md-nav__link" for="nav-5-2">
+      Basic Examples
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-2">
+        Basic Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/basic/chip-info-example/" title="Chip Info Example" class="md-nav__link">
+      Chip Info Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/basic/mac-address-example/" title="MAC Address Example" class="md-nav__link">
+      MAC Address Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/basic/signal-strength-example/" title="Signal Strength Example" class="md-nav__link">
+      Signal Strength Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/basic/mode-sta-example/" title="STA Mode Example" class="md-nav__link">
+      STA Mode Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/basic/mode-ap-example/" title="AP Mode Example" class="md-nav__link">
+      AP Mode Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/basic/ap-scan-example/" title="AP Scan Example" class="md-nav__link">
+      AP Scan Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/basic/power-mode-example/" title="Power Save Mode Example" class="md-nav__link">
+      Power Save Mode Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/basic/provision-http-example/" title="HTTP Provision Example" class="md-nav__link">
+      HTTP Provision Example
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
+      Protocol Examples
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        Protocol Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/protocol/ping-example/" title="Ping Request Example" class="md-nav__link">
+      Ping Request Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/protocol/tcp-client-example/" title="TCP Client Example" class="md-nav__link">
+      TCP Client Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/protocol/tcp-server-example/" title="TCP Server Example" class="md-nav__link">
+      TCP Server Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/protocol/udp-client-example/" title="UDP Client Example" class="md-nav__link">
+      UDP Client Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/protocol/udp-server-example/" title="UDP Server Example" class="md-nav__link">
+      UDP Server Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/protocol/time-client-example/" title="NTP Time Client Example" class="md-nav__link">
+      NTP Time Client Example
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4">
+    
+    <label class="md-nav__link" for="nav-5-4">
+      Advanced Examples
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-4">
+        Advanced Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/advanced/mqtt-client-example/" title="MQTT Client Example" class="md-nav__link">
+      MQTT Client Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/advanced/ssl-connect-example/" title="SSL Connection Example" class="md-nav__link">
+      SSL Connection Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/advanced/weather-client-example/" title="Weather Client Example" class="md-nav__link">
+      Weather Client Example
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+    
+    <label class="md-nav__link" for="nav-5-5">
+      Update Wi-Fi Firmware
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-5">
+        Update Wi-Fi Firmware
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/update/" title="Prepare for Setup" class="md-nav__link">
+      Prepare for Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/update/download-firmware/" title="Download Wi-Fi Firmware" class="md-nav__link">
+      Download Wi-Fi Firmware
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/update/download-root-certs/" title="Download Root Certificates" class="md-nav__link">
+      Download Root Certificates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/update/download-tls-certs/" title="Download TLS Certificates" class="md-nav__link">
+      Download TLS Certificates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/update/customize-provisioning-page/" title="Customize Provisioning Page" class="md-nav__link">
+      Customize Provisioning Page
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/update/modify-gain-values/" title="Modify TX Power Gain" class="md-nav__link">
+      Modify TX Power Gain
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/create-tls-certificates/" title="Create Custom TLS Certificates" class="md-nav__link">
+      Create Custom TLS Certificates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      OpenThread Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        OpenThread Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../setup-the-thread-sdk/" title="Setup the Thread SDK" class="md-nav__link">
+      Setup the Thread SDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../build-n-run-thread-example/" title="Build & Run a Thread Example" class="md-nav__link">
+      Build & Run a Thread Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../openthread-border-router/" title="OpenThread Border Router" class="md-nav__link">
+      OpenThread Border Router
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../thread-topology-monitor/" title="Thread Topology Monitor" class="md-nav__link">
+      Thread Topology Monitor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Thread Network Sniffer
+      </label>
+    
+    <a href="./" title="Thread Network Sniffer" class="md-nav__link md-nav__link--active">
+      Thread Network Sniffer
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overivew" title="Overivew" class="md-nav__link">
+    Overivew
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-the-sniffer-environment" title="Set up the sniffer environment" class="md-nav__link">
+    Set up the sniffer environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-wireshark" title="Install Wireshark" class="md-nav__link">
+    Install Wireshark
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flash-the-ncp-radio-firmware" title="Flash the NCP Radio firmware" class="md-nav__link">
+    Flash the NCP Radio firmware
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thread-network-properties" title="Thread network properties" class="md-nav__link">
+    Thread network properties
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mesh-local-prefix" title="Mesh Local Prefix" class="md-nav__link">
+    Mesh Local Prefix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel" title="Channel" class="md-nav__link">
+    Channel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#master-key" title="Master Key" class="md-nav__link">
+    Master Key
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wireshark-configuration-protocols" title="Wireshark configuration - protocols" class="md-nav__link">
+    Wireshark configuration - protocols
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6lowpan" title="6LoWPAN" class="md-nav__link">
+    6LoWPAN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coap" title="CoAP" class="md-nav__link">
+    CoAP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ieee-802154" title="IEEE 802.15.4" class="md-nav__link">
+    IEEE 802.15.4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thread" title="Thread" class="md-nav__link">
+    Thread
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wireshark-configuration-rssi" title="Wireshark configuration - RSSI" class="md-nav__link">
+    Wireshark configuration - RSSI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-sniffer" title="Run the sniffer" class="md-nav__link">
+    Run the sniffer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" title="License" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-an-issue" title="Create an Issue" class="md-nav__link">
+    Create an Issue
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../where-to-buy/" title="Where to Buy" class="md-nav__link">
+      Where to Buy
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../CONTRIBUTING/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../LICENSE/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overivew" title="Overivew" class="md-nav__link">
+    Overivew
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-the-sniffer-environment" title="Set up the sniffer environment" class="md-nav__link">
+    Set up the sniffer environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-wireshark" title="Install Wireshark" class="md-nav__link">
+    Install Wireshark
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flash-the-ncp-radio-firmware" title="Flash the NCP Radio firmware" class="md-nav__link">
+    Flash the NCP Radio firmware
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thread-network-properties" title="Thread network properties" class="md-nav__link">
+    Thread network properties
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mesh-local-prefix" title="Mesh Local Prefix" class="md-nav__link">
+    Mesh Local Prefix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel" title="Channel" class="md-nav__link">
+    Channel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#master-key" title="Master Key" class="md-nav__link">
+    Master Key
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wireshark-configuration-protocols" title="Wireshark configuration - protocols" class="md-nav__link">
+    Wireshark configuration - protocols
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6lowpan" title="6LoWPAN" class="md-nav__link">
+    6LoWPAN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coap" title="CoAP" class="md-nav__link">
+    CoAP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ieee-802154" title="IEEE 802.15.4" class="md-nav__link">
+    IEEE 802.15.4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thread" title="Thread" class="md-nav__link">
+    Thread
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wireshark-configuration-rssi" title="Wireshark configuration - RSSI" class="md-nav__link">
+    Wireshark configuration - RSSI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-sniffer" title="Run the sniffer" class="md-nav__link">
+    Run the sniffer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" title="License" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-an-issue" title="Create an Issue" class="md-nav__link">
+    Create an Issue
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="build-a-thread-network-sniffer">Build a Thread Network Sniffer<a class="headerlink" href="#build-a-thread-network-sniffer" title="Permanent link">&para;</a></h1>
+<h2 id="overivew">Overivew<a class="headerlink" href="#overivew" title="Permanent link">&para;</a></h2>
+<p>During development, you may need to check what kind of data is wirelessly transmitted over the Thread network. With <a href="https://github.com/openthread/pyspinel">Pyspinel</a> and Wireshark, you can set up a sniffer which allows to dynamically monitor the IEEE 802.15.4 wireless traffic. </p>
+<p>The Pyspinel sniffer tool connects to a Thread NCP device and converts it into a promiscuous packet sniffer, generating a pcap (packet capture) stream to be saved or piped directly into Wireshark.</p>
+<p>Wireshark is an open-source tool that can decode network protocols in the Thread stack, such as IEEE 802.15.4, 6LoWPAN, IPv6, MLE (Mesh Link Establishment), UDP, and CoAP.</p>
+<p>This section describes how to set up a Thread Sniffer, which can help you to efficiently analyze Thread network traffic.</p>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<ul>
+<li>macOS or Ubuntu machine</li>
+<li>Pitaya Go</li>
+<li><a href="https://www.python.org/downloads/">Python 2.7 or Python 3</a></li>
+<li><a href="https://wireshark.org/">Wireshark</a> 2.4.1 or newer</li>
+</ul>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h3 id="set-up-the-sniffer-environment">Set up the sniffer environment<a class="headerlink" href="#set-up-the-sniffer-environment" title="Permanent link">&para;</a></h3>
+<p>Clone and install Pyspinel and dependencies:</p>
+<p><div class="codehilite"><pre><span></span>git clone https://github.com/openthread/pyspinel
+</pre></div>
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> pyspinel
+</pre></div>
+<div class="codehilite"><pre><span></span>pip install --user future pyserial ipaddress
+</pre></div></p>
+<h3 id="install-wireshark">Install Wireshark<a class="headerlink" href="#install-wireshark" title="Permanent link">&para;</a></h3>
+<p>On MacOS, go to the <a href="https://www.wireshark.org/#download">Wireshark Download page</a> and install the current stable release of Wireshark.</p>
+<p>On Ubuntu Linux, you can run the following commands:</p>
+<p><div class="codehilite"><pre><span></span>sudo add-apt-repository ppa:wireshark-dev/stable
+</pre></div>
+<div class="codehilite"><pre><span></span>sudo apt-get update
+</pre></div>
+<div class="codehilite"><pre><span></span>sudo apt-get install wireshark
+</pre></div></p>
+<h2 id="flash-the-ncp-radio-firmware">Flash the NCP Radio firmware<a class="headerlink" href="#flash-the-ncp-radio-firmware" title="Permanent link">&para;</a></h2>
+<p>The pre-built firmware is located in <a href="https://github.com/makerdiary/pitaya-go/tree/master/firmware/openthread/ncp">pitaya-go/firmware/openthread/ncp</a> with the name <code>thread_ncp_radio_usb_pitaya_go_vx.x.x</code>.</p>
+<ol>
+<li>
+<p>Connect Pitaya Go to your PC using the USB-C cable. </p>
+</li>
+<li>
+<p>While pushing the <strong>USER</strong> button, press the <strong>RESET</strong> button to enter the DFU (Device Firmware Update) mode. Then program the firmware using the <a href="https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop">nRF Connect for Desktop</a> tool.</p>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>See <strong><a href="../../programming/">Programming</a></strong> section for details about how to program your Pitaya Go.</p>
+</div>
+<h2 id="thread-network-properties">Thread network properties<a class="headerlink" href="#thread-network-properties" title="Permanent link">&para;</a></h2>
+<p>Before continuing, get the following properties for the Thread network you wish to sniff. You'll need them for Wireshark configuration and running the Pyspinel sniffer.</p>
+<h3 id="mesh-local-prefix">Mesh Local Prefix<a class="headerlink" href="#mesh-local-prefix" title="Permanent link">&para;</a></h3>
+<p>To get the Mesh Local Prefix from a device in the target Thread network:</p>
+<ul>
+<li>
+<p>Using the OpenThread CLI:</p>
+<div class="codehilite"><pre><span></span>&gt; dataset active
+Active Timestamp: <span class="m">0</span>
+Channel: <span class="m">15</span>
+Channel Mask: 07fff800
+Ext PAN ID: <span class="m">1111111122222222</span>
+Mesh Local Prefix: fd11:1111:1122:0/64
+Master Key: 00112233445566778899aabbccddeeff
+Network Name: OpenThreadDemo
+PAN ID: 0x1234
+PSKc: 61e1206d2c2b46e079eb775f41fc7219
+Security Policy: <span class="m">672</span>, onrcb
+Done
+</pre></div>
+
+</li>
+<li>
+<p>Using <code>wpanctl</code> with an NCP:</p>
+<div class="codehilite"><pre><span></span>$ sudo wpanctl getprop IPv6:MeshLocalPrefix
+IPv6:MeshLocalPrefix <span class="o">=</span> <span class="s2">&quot;fd11:1111:1122::/64&quot;</span>
+</pre></div>
+
+</li>
+<li>
+<p>Using the OTBR Web GUI, select <strong>Status</strong>. The Mesh Local Prefix is listed as IPv6:MeshLocalPrefix similar to <code>wpanctl</code>.</p>
+</li>
+</ul>
+<h3 id="channel">Channel<a class="headerlink" href="#channel" title="Permanent link">&para;</a></h3>
+<p>To get the Channel from a device in the target Thread network:</p>
+<ul>
+<li>
+<p>Using the OpenThread CLI:</p>
+<div class="codehilite"><pre><span></span>&gt; channel
+<span class="m">15</span>
+Done
+</pre></div>
+
+</li>
+<li>
+<p>Using <code>wpanctl</code> with an NCP:</p>
+<div class="codehilite"><pre><span></span>$ sudo wpanctl getprop NCP:Channel
+NCP:Channel <span class="o">=</span> <span class="m">15</span>
+</pre></div>
+
+</li>
+<li>
+<p>Using the OTBR Web GUI, select <strong>Status</strong>. The Channel is listed as NCP:Channel similar to <code>wpanctl</code>.</p>
+</li>
+</ul>
+<h3 id="master-key">Master Key<a class="headerlink" href="#master-key" title="Permanent link">&para;</a></h3>
+<p>The Thread network Master Key is used by Wireshark to decrypt packets after capture. To get the Master Key from a device in the target Thread network:</p>
+<ul>
+<li>
+<p>Using the OpenThread CLI:</p>
+<div class="codehilite"><pre><span></span>&gt; masterkey
+00112233445566778899aabbccddeeff
+Done
+</pre></div>
+
+</li>
+<li>
+<p>Using <code>wpanctl</code> with an NCP:</p>
+<div class="codehilite"><pre><span></span>$ sudo wpanctl getprop Network:Key
+Network:Key <span class="o">=</span> <span class="o">[</span>00112233445566778899AABBCCDDEEFF<span class="o">]</span>
+</pre></div>
+
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Thread network Master Key is not available in the OTBR Web GUI.</p>
+</div>
+<h2 id="wireshark-configuration-protocols">Wireshark configuration - protocols<a class="headerlink" href="#wireshark-configuration-protocols" title="Permanent link">&para;</a></h2>
+<p>Wireshark must be configured to properly show Thread packets.</p>
+<p>Select <strong>Preferences...</strong> in Wireshark and expand the <strong>Protocols</strong> section.</p>
+<h3 id="6lowpan">6LoWPAN<a class="headerlink" href="#6lowpan" title="Permanent link">&para;</a></h3>
+<p>Select <strong>6LoWPAN</strong> from the list of protocols and verify or change the following settings:</p>
+<ol>
+<li>Uncheck <strong>Derive ID according to RFC 4944</strong>.</li>
+<li>Update <strong>Context 0</strong> with the Mesh Local Prefix for the target Thread network.</li>
+</ol>
+<p>Wireshark uses context configurations to parse the compressed IPv6 address and display the IPv6 source and destination addresses correctly.</p>
+<p><img alt="" src="../assets/images/wireshark-6lowpan-configuration.png" /></p>
+<h3 id="coap">CoAP<a class="headerlink" href="#coap" title="Permanent link">&para;</a></h3>
+<p>Select <strong>CoAP</strong> from the list of protocols and set <strong>CoAP UDP Port</strong> to <code>61631</code>. This ensures TMF messages (like address solicit) are displayed.</p>
+<h3 id="ieee-802154">IEEE 802.15.4<a class="headerlink" href="#ieee-802154" title="Permanent link">&para;</a></h3>
+<p>Select <strong>IEEE 802.15.4</strong> from the list of protocols and verify or change the following settings:</p>
+<ol>
+<li>
+<p>Set <strong>802.15.4 Ethertype (in hex)</strong> to <code>0x809a</code>.</p>
+</li>
+<li>
+<p>Set the <strong>Security Suite (802.15.4-2003)</strong> to <code>AES-128 Encryption, 32-bit Integrity Protection</code>.</p>
+</li>
+<li>
+<p>Click the <kbd>Edit...</kbd> button next to <strong>Decryption Keys</strong>, which is where you add the Thread network Master Key for packet decryption.</p>
+<p>a. Click <kbd>+</kbd> to add a <strong>Decryption key</strong>.</p>
+<p>b. Enter the Thread network Master Key into the <strong>Decryption key</strong> column.</p>
+<p>c Enter <code>1</code> as the <strong>Decryption key index</strong>.</p>
+<p>d. Select <strong>Thread hash</strong> from the <strong>Key hash</strong> column listbox. </p>
+<p>e. Click <kbd>OK</kbd> to save the decryption key.</p>
+<p><img alt="" src="../assets/images/wireshark-ieee802154-configuration.png" /></p>
+</li>
+</ol>
+<h3 id="thread">Thread<a class="headerlink" href="#thread" title="Permanent link">&para;</a></h3>
+<p>Select <strong>Thread</strong> from the list of protocols and verify or change the following settings:</p>
+<ol>
+<li>
+<p>Enter <code>00000000</code> for the <strong>Thread sequence counter</strong>.</p>
+</li>
+<li>
+<p>Uncheck <strong>Use PAN ID as first two octets of master key</strong>.</p>
+</li>
+<li>
+<p>Check <strong>Automatically acquire Thread sequence counter</strong>.</p>
+</li>
+</ol>
+<p>Click the <kbd>OK</kbd> button to save any protocol changes.</p>
+<p><img alt="" src="../assets/images/wireshark-thread-configuration.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some Thread traffic might be analyzed as the ZigBee protocol. To correctly display these two protocols, edit the enabled protocols in Wireshark:</p>
+<ol>
+<li>
+<p>In Wireshark, go to <strong>Analyze</strong> &gt; <strong>Enabled Protocols</strong>.</p>
+</li>
+<li>
+<p>Uncheck the following protocols:</p>
+<ul>
+<li>LwMesh</li>
+<li>ZigBee</li>
+<li>ZigBee Green Power</li>
+</ul>
+</li>
+</ol>
+</div>
+<h2 id="wireshark-configuration-rssi">Wireshark configuration - RSSI<a class="headerlink" href="#wireshark-configuration-rssi" title="Permanent link">&para;</a></h2>
+<p>To display RSSI in Wireshark:</p>
+<ol>
+<li>Go to <strong>Preferences</strong> &gt; <strong>Protocols</strong> &gt; <strong>IEEE 802.15.4</strong>.</li>
+<li>Check <strong>TI CC24xx FCS format</strong>.</li>
+<li>Click <kbd>OK</kbd> to save and return to the <strong>Preferences</strong> menu.</li>
+<li>From <strong>Preferences</strong>, select <strong>Appearance</strong> &gt; <strong>Columns</strong>.</li>
+<li>Add a new entry:<ul>
+<li>Title: RSSI</li>
+<li>Type: Custom</li>
+<li>Fields: wpan.rssi</li>
+</ul>
+</li>
+</ol>
+<h2 id="run-the-sniffer">Run the sniffer<a class="headerlink" href="#run-the-sniffer" title="Permanent link">&para;</a></h2>
+<p>Make sure to use the specific device path for your NCP and the channel for the Thread network you are attempting to sniff.</p>
+<p>Change to the <code>pyspinel</code> directory and start Wireshark with the following command:</p>
+<div class="codehilite"><pre><span></span>sudo python ./sniffer.py -c <span class="m">15</span> -u /dev/cu.usbmodemDB71638B4DB62 --crc --rssi -b <span class="m">115200</span> <span class="p">|</span> wireshark -k -i -
+</pre></div>
+
+<p>The parameters stand for the following:</p>
+<ul>
+<li><code>-c</code>: Thread Channel</li>
+<li><code>-u</code>: The NCP device path</li>
+<li><code>–crc</code>: Disable the wrong FCS warning resulting from the fact that Nordic radio replaces one byte of CRC with LQI after a packet is received and verified.</li>
+<li><code>--rssi</code>: Ensure the RSSI is included in the pcap output.</li>
+<li><code>-b</code>: Baud rate</li>
+</ul>
+<p>You should now be able to see the packets and related protocols for this configuration in Wireshark:</p>
+<p><img alt="" src="../assets/images/run-the-sniffer-with-wireshark.png" /></p>
+<p><img alt="" src="../assets/images/wireshark-sniffing.png" /></p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<p>For more information on how to use Pyspinel and Wireshark, see the following:</p>
+<ul>
+<li><a href="https://github.com/openthread/pyspinel/blob/master/SNIFFER.md">Spinel sniffer reference</a></li>
+<li><a href="https://www.wireshark.org/">wireshark.org</a></li>
+<li><a href="https://openthread.io/guides/ncp/sniffer">openthread.io - Packet sniffing with Pyspinel</a></li>
+</ul>
+<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>Portions of this page are reproduced from work created and <a href="https://developers.google.com/readme/policies/">shared by Google</a> and used according to terms described in the <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons 3.0 Attribution License</a>.</p>
+<p>Thread is a registered trademark of the <a href="https://www.threadgroup.org/">Thread Group, Inc</a>.</p>
+<h2 id="create-an-issue">Create an Issue<a class="headerlink" href="#create-an-issue" title="Permanent link">&para;</a></h2>
+<p>Interested in contributing to this project? Want to report a bug? Feel free to click here:</p>
+<p><a href="https://github.com/makerdiary/grove-mesh-kit/issues/new"><button data-md-color-primary="marsala"><i class="fa fa-github"></i> Create an Issue</button></a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../thread-topology-monitor/" title="Thread Topology Monitor" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Thread Topology Monitor
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../where-to-buy/" title="Where to Buy" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Where to Buy
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 <a href="https://wiki.makerdiary.com" target="_blank">wiki.makerdiary.com</a>
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://community.makerdiary.com" class="md-footer-social__link fa fa-comments"></a>
+    
+      <a href="https://makerdiary.com" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/makerdiary" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/makerdiary" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.facebook.com/makerdiary" class="md-footer-social__link fa fa-facebook"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.24c73612.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../assets/js/jquery.qrcode.min.js"></script>
+      
+    
+  </body>
+</html>

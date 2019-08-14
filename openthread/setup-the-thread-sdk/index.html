@@ -1,0 +1,1685 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="The documentation offers all you need to start developing with Pitaya Go.">
+      
+      
+        <link rel="canonical" href="https://wiki.makerdiary.com/pitaya-go/openthread/setup-the-thread-sdk/">
+      
+      
+        <meta name="author" content="makerdiary">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.1">
+    
+    
+      
+        <title>Setup the Thread SDK - Pitaya Go Developer Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.3b80946a.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-54344624-2", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="marsala" data-md-color-accent="marsala">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#setup-the-thread-sdk" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://wiki.makerdiary.com/pitaya-go/" title="Pitaya Go Developer Docs" class="md-header-nav__button md-logo">
+          
+            <img src="../../assets/images/logo.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Pitaya Go Developer Docs
+            </span>
+            <span class="md-header-nav__topic">
+              Setup the Thread SDK
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/makerdiary/pitaya-go" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    makerdiary/pitaya-go
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Introduction" class="md-tabs__link">
+        Introduction
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../nrf5-sdk/" title="nRF5 SDK Tutorials" class="md-tabs__link">
+          nRF5 SDK Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../wifi/" title="Wi-Fi Tutorials" class="md-tabs__link">
+          Wi-Fi Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../" title="OpenThread Tutorials" class="md-tabs__link md-tabs__link--active">
+          OpenThread Tutorials
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://wiki.makerdiary.com/pitaya-go/" title="Pitaya Go Developer Docs" class="md-nav__button md-logo">
+      
+        <img src="../../assets/images/logo.svg" width="48" height="48">
+      
+    </a>
+    Pitaya Go Developer Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/makerdiary/pitaya-go" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    makerdiary/pitaya-go
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../programming/" title="Programming" class="md-nav__link">
+      Programming
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      nRF5 SDK Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        nRF5 SDK Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/setup-the-nrf5-sdk/" title="Setup the nRF5 SDK" class="md-nav__link">
+      Setup the nRF5 SDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/build-n-run-a-first-example/" title="Build & Run a first example" class="md-nav__link">
+      Build & Run a first example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+    
+    <label class="md-nav__link" for="nav-4-4">
+      Peripheral Examples
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-4">
+        Peripheral Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/peripheral/blinky-example/" title="Blinky Example" class="md-nav__link">
+      Blinky Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/peripheral/button-example/" title="Button Example" class="md-nav__link">
+      Button Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/peripheral/battery-example/" title="Battery Status Example" class="md-nav__link">
+      Battery Status Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/peripheral/nfc-example/" title="NFC Tag Example" class="md-nav__link">
+      NFC Tag Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/peripheral/power-profiler-example/" title="Power Profiler Example" class="md-nav__link">
+      Power Profiler Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/peripheral/qspi-example/" title="QSPI Flash Example" class="md-nav__link">
+      QSPI Flash Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/peripheral/rssi-viewer-example/" title="RSSI Viewer Example" class="md-nav__link">
+      RSSI Viewer Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/peripheral/temperature-example/" title="Temperature Example" class="md-nav__link">
+      Temperature Example
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
+    
+    <label class="md-nav__link" for="nav-4-5">
+      BLE Examples
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-5">
+        BLE Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/ble/ble-blinky-example/" title="BLE Blinky Example" class="md-nav__link">
+      BLE Blinky Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/ble/ble-beacon-example/" title="BLE Beacon Example" class="md-nav__link">
+      BLE Beacon Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/ble/ble-bas-example/" title="BLE Battery Service Example" class="md-nav__link">
+      BLE Battery Service Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/ble/ble-hrs-example/" title="BLE Heart Rate Sensor Example" class="md-nav__link">
+      BLE Heart Rate Sensor Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/ble/ble-hids-keyboard-example/" title="BLE HID Keyboard Example" class="md-nav__link">
+      BLE HID Keyboard Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nrf5-sdk/ble/ble-hids-mouse-example/" title="BLE HID Mouse Example" class="md-nav__link">
+      BLE HID Mouse Example
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Wi-Fi Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Wi-Fi Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
+    
+    <label class="md-nav__link" for="nav-5-2">
+      Basic Examples
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-2">
+        Basic Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/basic/chip-info-example/" title="Chip Info Example" class="md-nav__link">
+      Chip Info Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/basic/mac-address-example/" title="MAC Address Example" class="md-nav__link">
+      MAC Address Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/basic/signal-strength-example/" title="Signal Strength Example" class="md-nav__link">
+      Signal Strength Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/basic/mode-sta-example/" title="STA Mode Example" class="md-nav__link">
+      STA Mode Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/basic/mode-ap-example/" title="AP Mode Example" class="md-nav__link">
+      AP Mode Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/basic/ap-scan-example/" title="AP Scan Example" class="md-nav__link">
+      AP Scan Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/basic/power-mode-example/" title="Power Save Mode Example" class="md-nav__link">
+      Power Save Mode Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/basic/provision-http-example/" title="HTTP Provision Example" class="md-nav__link">
+      HTTP Provision Example
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
+      Protocol Examples
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        Protocol Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/protocol/ping-example/" title="Ping Request Example" class="md-nav__link">
+      Ping Request Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/protocol/tcp-client-example/" title="TCP Client Example" class="md-nav__link">
+      TCP Client Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/protocol/tcp-server-example/" title="TCP Server Example" class="md-nav__link">
+      TCP Server Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/protocol/udp-client-example/" title="UDP Client Example" class="md-nav__link">
+      UDP Client Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/protocol/udp-server-example/" title="UDP Server Example" class="md-nav__link">
+      UDP Server Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/protocol/time-client-example/" title="NTP Time Client Example" class="md-nav__link">
+      NTP Time Client Example
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4">
+    
+    <label class="md-nav__link" for="nav-5-4">
+      Advanced Examples
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-4">
+        Advanced Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/advanced/mqtt-client-example/" title="MQTT Client Example" class="md-nav__link">
+      MQTT Client Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/advanced/ssl-connect-example/" title="SSL Connection Example" class="md-nav__link">
+      SSL Connection Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/advanced/weather-client-example/" title="Weather Client Example" class="md-nav__link">
+      Weather Client Example
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+    
+    <label class="md-nav__link" for="nav-5-5">
+      Update Wi-Fi Firmware
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-5">
+        Update Wi-Fi Firmware
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/update/" title="Prepare for Setup" class="md-nav__link">
+      Prepare for Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/update/download-firmware/" title="Download Wi-Fi Firmware" class="md-nav__link">
+      Download Wi-Fi Firmware
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/update/download-root-certs/" title="Download Root Certificates" class="md-nav__link">
+      Download Root Certificates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/update/download-tls-certs/" title="Download TLS Certificates" class="md-nav__link">
+      Download TLS Certificates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/update/customize-provisioning-page/" title="Customize Provisioning Page" class="md-nav__link">
+      Customize Provisioning Page
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/update/modify-gain-values/" title="Modify TX Power Gain" class="md-nav__link">
+      Modify TX Power Gain
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wifi/create-tls-certificates/" title="Create Custom TLS Certificates" class="md-nav__link">
+      Create Custom TLS Certificates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      OpenThread Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        OpenThread Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Setup the Thread SDK
+      </label>
+    
+    <a href="./" title="Setup the Thread SDK" class="md-nav__link md-nav__link--active">
+      Setup the Thread SDK
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-the-toolchain" title="Set up the toolchain" class="md-nav__link">
+    Set up the toolchain
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macos" title="macOS" class="md-nav__link">
+    macOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" title="Windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" title="Linux" class="md-nav__link">
+    Linux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clone-the-repository" title="Clone the repository" class="md-nav__link">
+    Clone the repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-nrf5-sdk-for-thread" title="Install the nRF5 SDK for Thread" class="md-nav__link">
+    Install the nRF5 SDK for Thread
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-step" title="Next Step" class="md-nav__link">
+    Next Step
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-an-issue" title="Create an Issue" class="md-nav__link">
+    Create an Issue
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../build-n-run-thread-example/" title="Build & Run a Thread Example" class="md-nav__link">
+      Build & Run a Thread Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../openthread-border-router/" title="OpenThread Border Router" class="md-nav__link">
+      OpenThread Border Router
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../thread-topology-monitor/" title="Thread Topology Monitor" class="md-nav__link">
+      Thread Topology Monitor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../thread-network-sniffer/" title="Thread Network Sniffer" class="md-nav__link">
+      Thread Network Sniffer
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../where-to-buy/" title="Where to Buy" class="md-nav__link">
+      Where to Buy
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../CONTRIBUTING/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../LICENSE/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-the-toolchain" title="Set up the toolchain" class="md-nav__link">
+    Set up the toolchain
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macos" title="macOS" class="md-nav__link">
+    macOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" title="Windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" title="Linux" class="md-nav__link">
+    Linux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clone-the-repository" title="Clone the repository" class="md-nav__link">
+    Clone the repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-nrf5-sdk-for-thread" title="Install the nRF5 SDK for Thread" class="md-nav__link">
+    Install the nRF5 SDK for Thread
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-step" title="Next Step" class="md-nav__link">
+    Next Step
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-an-issue" title="Create an Issue" class="md-nav__link">
+    Create an Issue
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="setup-the-thread-sdk">Setup the Thread SDK<a class="headerlink" href="#setup-the-thread-sdk" title="Permanent link">&para;</a></h1>
+<p>This section describes how to set up the Thread SDK development environment on your system.</p>
+<h2 id="set-up-the-toolchain">Set up the toolchain<a class="headerlink" href="#set-up-the-toolchain" title="Permanent link">&para;</a></h2>
+<p>To build the Thread SDK applications, GNU ARM Embedded Toolchain is required. Follow one of the following guides for your host operating system:</p>
+<ul>
+<li><a href="#macos">macOS</a></li>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#linux">Linux</a></li>
+</ul>
+<h3 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>GNU make is bundled with Xcode tools. Verify by running:
+    <div class="codehilite"><pre><span></span>make --v
+</pre></div></p>
+</li>
+<li>
+<p>Download and install the <a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads">GNU ARM Embedded Toolchain</a>. The <code>7-2018-q2-update</code> version is recommended.</p>
+</li>
+<li>
+<p>Download the <a href="https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Command-Line-Tools/Download#infotabs">nRF5x-Command-Line-Tools-OSX</a>, then extract the <code>.tar</code> archive anywhere on your filesystem. Ensure the extracted directory is added to your OS PATH environment variable.</p>
+<div class="codehilite"><pre><span></span><span class="c1"># in ~/.bash_profile, add the following script</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;&lt;the path to the extracted directory&gt;:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+
+<p>Type the following in your terminal to verify if <code>mergehex</code> works:
+<div class="codehilite"><pre><span></span>mergehex --version
+</pre></div></p>
+</li>
+<li>
+<p>(Optional) Install the latest stable version of <a href="https://github.com/mbedmicro/pyOCD">pyOCD</a> via <code>pip</code> as follows:</p>
+<div class="codehilite"><pre><span></span>pip install -U pyocd
+</pre></div>
+
+<p>Type the following in your terminal to verify if <code>pyocd</code> works:
+<div class="codehilite"><pre><span></span>pyocd --version
+</pre></div></p>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>pyOCD is an open source Python package for programming and debugging Arm Cortex-M microcontrollers using multiple supported types of USB debug probes. If you have a CMSIS-DAP debug probe, it's recommended to install pyOCD.  </p>
+</div>
+<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
+<p>On Windows the easiest way to install the dependencies is to use the <a href="http://www.msys2.org/">MSYS2</a>. You can do so by performing the following steps:</p>
+<ol>
+<li>
+<p>Download and run the installer - "x86_64" for 64-bit, "i686" for 32-bit Windows.
+    <a href="http://www.msys2.org/"><button data-md-color-primary="marsala">Download</button></a></p>
+</li>
+<li>
+<p>Start MSYS2. Update the package database and core system packages with:</p>
+<div class="codehilite"><pre><span></span>pacman -Syu
+</pre></div>
+
+</li>
+<li>
+<p>If needed, close MSYS2, run it again from Start menu. Update the rest with:</p>
+<div class="codehilite"><pre><span></span>pacman -Su
+</pre></div>
+
+</li>
+<li>
+<p>Install dependencies:</p>
+<div class="codehilite"><pre><span></span>pacman -S git make python2
+</pre></div>
+
+</li>
+<li>
+<p>Download and install the <a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads">GNU ARM Embedded Toolchain</a>. The <code>7-2018-q2-update</code> version is recommended. Run the installer and follow the given instructions.</p>
+</li>
+<li>
+<p>Download the <a href="https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Command-Line-Tools/Download#infotabs">nRF5x-Command-Line-Tools for Win32</a>. Run the installer and follow the given instructions. Then verify if <code>mergehex</code> works:</p>
+<div class="codehilite"><pre><span></span>mergehex --version
+</pre></div>
+
+</li>
+<li>
+<p>(Optional) Install the latest stable version of <a href="https://github.com/mbedmicro/pyOCD">pyOCD</a> via <code>pip</code> as follows:</p>
+<p><div class="codehilite"><pre><span></span>pip install -U pyocd
+</pre></div>
+Type the following in your terminal to verify if <code>pyocd</code> works:
+<div class="codehilite"><pre><span></span>pyocd --version
+</pre></div></p>
+</li>
+</ol>
+<h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
+<p>Here we describe how to set up the toolchain on Ubuntu. The steps should be similar for other Linux distributions.</p>
+<ol>
+<li>
+<p>Ensure your host system is up to date before proceeding.</p>
+<p><div class="codehilite"><pre><span></span>sudo apt-get update
+</pre></div>
+<div class="codehilite"><pre><span></span>sudo apt-get upgrade
+</pre></div></p>
+</li>
+<li>
+<p>Install the following packages using your system’s package manager.</p>
+<div class="codehilite"><pre><span></span>sudo apt-get install build-essential checkinstall
+</pre></div>
+
+</li>
+<li>
+<p>Download and install the <a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads">GNU ARM Embedded Toolchain</a>. The <code>7-2018-q2-update</code> version is recommended.</p>
+</li>
+<li>
+<p>Download the <a href="https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Command-Line-Tools/Download#infotabs">nRF5x-Command-Line-Tools-Linux-xxx</a>, then extract the <code>.tar</code> archive anywhere on your filesystem. Ensure the extracted directory is added to your OS PATH environment variable.</p>
+<div class="codehilite"><pre><span></span><span class="c1"># in ~/.bash_profile, add the following script</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;&lt;the path to the extracted directory&gt;:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+
+<p>Type the following in your terminal to verify if <code>mergehex</code> works:
+<div class="codehilite"><pre><span></span>mergehex --version
+</pre></div></p>
+</li>
+<li>
+<p>(Optional) Install the latest stable version of <a href="https://github.com/mbedmicro/pyOCD">pyOCD</a> via <code>pip</code> as follows:</p>
+<div class="codehilite"><pre><span></span>pip install -U pyocd
+</pre></div>
+
+<p>Type the following in your terminal to verify if <code>pyocd</code> works:
+<div class="codehilite"><pre><span></span>pyocd --version
+</pre></div></p>
+</li>
+</ol>
+<h2 id="clone-the-repository">Clone the repository<a class="headerlink" href="#clone-the-repository" title="Permanent link">&para;</a></h2>
+<p>Clone the <code>pitaya-go</code> repository from GitHub:</p>
+<div class="codehilite"><pre><span></span>git clone --recursive https://github.com/makerdiary/pitaya-go
+</pre></div>
+
+<p>Or if you have already cloned the project, you may update the submodule:</p>
+<div class="codehilite"><pre><span></span>git submodule update --init
+</pre></div>
+
+<h2 id="install-the-nrf5-sdk-for-thread">Install the nRF5 SDK for Thread<a class="headerlink" href="#install-the-nrf5-sdk-for-thread" title="Permanent link">&para;</a></h2>
+<p>The following steps show you how to install and set up the nRF5 SDK for Thread.</p>
+<p>Download the SDK file <a href="https://www.nordicsemi.com/Software-and-Tools/Software/nRF5-SDK-for-Thread-and-Zigbee/Download#infotabs">nRF5 SDK for Thread and Zigbee V3.1.0</a> from <a href="https://www.nordicsemi.com">www.nordicsemi.com</a>.</p>
+<p>Extract the zip file to this directory. This should give you the following folder structure:</p>
+<div class="codehilite"><pre><span></span>./pitaya-go/
+├── LICENSE
+├── README.md
+├── certs
+├── config
+├── docs
+├── examples
+├── external
+├── firmware
+├── material
+├── mkdocs.yml
+├── nrf_sdks
+│   ├── README.md
+│   ├── nRF5SDKforThreadandZigbeev310c7c4730
+│   └── nRF5_SDK_15.2.0_9412b96
+└── utils
+</pre></div>
+
+<p>To use this SDK you first need to set the toolchain path in <code>makefile.windows</code> or <code>makefile.posix</code> depending on platform you are using. That is, the <code>.posix</code> should be edited if your are working on either Linux or macOS. These files are located in:</p>
+<div class="codehilite"><pre><span></span>&lt;nRF5 SDK <span class="k">for</span> Thread and Zigbee&gt;/components/toolchain/gcc
+</pre></div>
+
+<p>Open the file in a text editor, and make sure that the <code>GNU_INSTALL_ROOT</code> variable is pointing to your GNU Arm Embedded Toolchain install directory.</p>
+<div class="codehilite"><pre><span></span>GNU_INSTALL_ROOT ?<span class="o">=</span> <span class="k">$(</span>HOME<span class="k">)</span>/gcc-arm-none-eabi/gcc-arm-none-eabi-7-2018-q2-update/bin/
+GNU_VERSION ?<span class="o">=</span> <span class="m">7</span>.3.1
+GNU_PREFIX ?<span class="o">=</span> arm-none-eabi
+</pre></div>
+
+<h2 id="next-step">Next Step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h2>
+<p>If everything works as expected, it's ready to build and run the examples to verify the development environment setup.</p>
+<p>Follow the steps in <a href="../build-n-run-thread-example/">Build &amp; Run a Thread example</a> to go on.</p>
+<h2 id="create-an-issue">Create an Issue<a class="headerlink" href="#create-an-issue" title="Permanent link">&para;</a></h2>
+<p>Interested in contributing to this project? Want to report a bug? Feel free to click here:</p>
+<p><a href="https://github.com/makerdiary/pitaya-go/issues/new"><button data-md-color-primary="marsala"><i class="fa fa-github"></i> Create an Issue</button></a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../getting-started/" title="Getting Started" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Getting Started
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../build-n-run-thread-example/" title="Build & Run a Thread Example" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Build & Run a Thread Example
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 <a href="https://wiki.makerdiary.com" target="_blank">wiki.makerdiary.com</a>
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://community.makerdiary.com" class="md-footer-social__link fa fa-comments"></a>
+    
+      <a href="https://makerdiary.com" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/makerdiary" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/makerdiary" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.facebook.com/makerdiary" class="md-footer-social__link fa fa-facebook"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.24c73612.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../assets/js/jquery.qrcode.min.js"></script>
+      
+    
+  </body>
+</html>
