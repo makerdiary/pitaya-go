@@ -169,7 +169,7 @@ typedef enum
 #define BATT_MEAS_FULL_BATT_LIMIT_MV     4190 // Full charge definition [mV].
 #define BATT_MEAS_VOLTAGE_TO_SOC_ELEMENTS 111 // Number of elements in the state of charge vector.
 #define BATT_MEAS_VOLTAGE_TO_SOC_DELTA_MV  10 // mV between each element in the SoC vector.
-#define BATT_VOLTAGE_DIVIDER_FACTOR         2 // Voltage divider factor: (R1+R2)/R2 = (1Mohm + 1Mphm)/1Mohm = 2
+#define BATT_VOLTAGE_DIVIDER_FACTOR         2 // Voltage divider factor: (R1+R2)/R2 = (1Mohm + 1Mohm)/1Mohm = 2
 
 /** Converts voltage to state of charge (SoC) [%]. The first element corresponds to the voltage 
 BATT_MEAS_LOW_BATT_LIMIT_MV and each element is BATT_MEAS_VOLTAGE_TO_SOC_DELTA_MV higher than the previous.
