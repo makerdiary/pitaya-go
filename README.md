@@ -13,7 +13,6 @@ Pitaya Go features a Battery Charger with power path management, 64Mbit ultra lo
 ## Features
 
 * Nordic Semiconductor nRF52840 SoC
-
 	- 64 MHz Arm® Cortex-M4 with FPU
 	- 1 MB Flash + 256 KB RAM
 	- Bluetooth 5, Bluetooth mesh, Thread, Zigbee, 802.15.4, ANT and 2.4 GHz proprietary
@@ -21,9 +20,7 @@ Pitaya Go features a Battery Charger with power path management, 64Mbit ultra lo
 	- Integrated USB 2.0 Full-speed Controller
 	- QSPI/SPI/TWI/I²S/PDM/QDEC/ADC support
 	- Integrated NFC-A Tag
-
 * Microchip ATWINC1500B Wi-Fi Network Controller
-
 	- Shipped with the latest firmware 19.6.1
 	- IEEE 802.11 b/g/n 20 MHz (1x1) Solution
 	- Extreme low power
@@ -32,7 +29,6 @@ Pitaya Go features a Battery Charger with power path management, 64Mbit ultra lo
 	- Security protocols supported: WPA/WPA2 Personal, TLS/SSL
 	- Enterprise Security with WPA/WPA2 (802.11x) 
 	- Network services: DHCP, DNS, TCP/IP (IPv4), UDP, HTTP, HTTPS, MQTT
-
 * 64Mbit ultra-low power QSPI Flash Memory
 * Integrated Li-Po Battery Charger with Power Path Management
 * Additional NFC-A Tag PCB Antenna
