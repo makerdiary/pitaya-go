@@ -76,6 +76,8 @@ Pitaya Go is available on the following channels (click to go directly to the pr
 
 [![makerdiary store](docs/assets/images/makerdiary-store-logo.png)](https://store.makerdiary.com/collections/frontpage/products/pitaya-go)
 
+[![amazon store](docs/assets/images/amazon_co_uk.jpg)](https://www.amazon.co.uk/dp/B07WTVRFGT?ref=myi_title_dp)
+
 [![Tindie](docs/assets/images/tindie-logo.png)](https://www.tindie.com/products/Zelin/pitaya-go-iot-development-board/)
 
 ## Contributing
