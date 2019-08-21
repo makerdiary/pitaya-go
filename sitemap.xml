@@ -2,277 +2,277 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/getting-started/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/programming/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/nrf5-sdk/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/nrf5-sdk/setup-the-nrf5-sdk/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/nrf5-sdk/build-n-run-a-first-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/nrf5-sdk/peripheral/blinky-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/nrf5-sdk/peripheral/button-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/nrf5-sdk/peripheral/battery-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/nrf5-sdk/peripheral/nfc-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/nrf5-sdk/peripheral/power-profiler-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/nrf5-sdk/peripheral/qspi-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/nrf5-sdk/peripheral/rssi-viewer-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/nrf5-sdk/peripheral/temperature-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/nrf5-sdk/ble/ble-blinky-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/nrf5-sdk/ble/ble-beacon-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/nrf5-sdk/ble/ble-bas-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/nrf5-sdk/ble/ble-hrs-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/nrf5-sdk/ble/ble-hids-keyboard-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/nrf5-sdk/ble/ble-hids-mouse-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/basic/chip-info-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/basic/mac-address-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/basic/signal-strength-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/basic/mode-sta-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/basic/mode-ap-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/basic/ap-scan-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/basic/power-mode-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/basic/provision-http-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/protocol/ping-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/protocol/tcp-client-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/protocol/tcp-server-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/protocol/udp-client-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/protocol/udp-server-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/protocol/time-client-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/advanced/mqtt-client-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/advanced/ssl-connect-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/advanced/weather-client-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/update/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/update/download-firmware/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/update/download-root-certs/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/update/download-tls-certs/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/update/customize-provisioning-page/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/update/modify-gain-values/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/wifi/create-tls-certificates/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/openthread/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/openthread/getting-started/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/openthread/setup-the-thread-sdk/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/openthread/build-n-run-thread-example/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/openthread/openthread-border-router/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/openthread/thread-topology-monitor/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/openthread/thread-network-sniffer/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/where-to-buy/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/CONTRIBUTING/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://wiki.makerdiary.com/pitaya-go/LICENSE/</loc>
-     <lastmod>2019-08-14</lastmod>
+     <lastmod>2019-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
