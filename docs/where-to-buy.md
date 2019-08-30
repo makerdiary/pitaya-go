@@ -6,6 +6,8 @@ Pitaya Go is available on the following channels (click to go directly to the pr
 
 [![makerdiary store](assets/images/makerdiary-store-logo.png)](https://store.makerdiary.com/products/pitaya-go)
 
+[![seeed studio](assets/images/seeed_logo_2018_horizontal.png)](https://www.seeedstudio.com/Pitaya-Go-An-Open-Source-IoT-Development-Platform-with-Multiprotocol-Wireless-Connectivity-p-4198.html)
+
 [![amazon store](assets/images/amazon_co_uk.jpg)](https://www.amazon.co.uk/dp/B07WTVRFGT?ref=myi_title_dp)
 
 [![Tindie](assets/images/tindie-logo.png)](https://www.tindie.com/products/Zelin/pitaya-go-iot-development-board/)
