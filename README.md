@@ -82,6 +82,8 @@ Pitaya Go is available on the following channels (click to go directly to the pr
 
 [![Tindie](docs/assets/images/tindie-logo.png)](https://www.tindie.com/products/Zelin/pitaya-go-iot-development-board/)
 
+[![Taobao](docs/assets/images/taobao-logo.png)](https://item.taobao.com/item.htm?spm=a1z10.1-c-s.w4004-18605444714.12.4f33796cemVgZR&id=600942145630)
+
 ## Contributing
 
 We would love for you to contribute to this project and help make it even better than it is today! See our [Contributing Guidelines](https://wiki.makerdiary.com/pitaya-go/CONTRIBUTING) for more information.
